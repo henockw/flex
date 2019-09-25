@@ -29,16 +29,21 @@
                       data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
                       data-amount="<%= (@course.cost * 100).to_i %>"
                       data-locale="auto"></script>
-            
+            <% end %>
+          <% end %>
+        <% end %>
       <% end %>
         <h3 class="badge badge-info">Sign In to Enroll!</h3>
       <% end %>
     </div>
+
     <div class="col-sm-8 col-12">
       <%= @course.description %>
     </div>
   </div> 
+
   <% section.courses.rank(:row_order).each do |course| %>
+
   <div class="col-12">
     <% @course.sections.each do |section| %>
       <br /><br />
