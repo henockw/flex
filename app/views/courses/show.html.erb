@@ -41,31 +41,28 @@
     </div>
   </div> 
 
-  <% section.courses.rank(:row_order).each do |course| %>
-
-    <div class="col-12">
-      <% @course.sections.each do |section| %>
-        <br /><br />
-        <div class="section">
-          <h3>
-            <%= section.title %>
-          </h3>
-          <div class="row">
-            <% section.lessons.rank(:row_order).each do |lesson| %>
-              <div class="col-12 col-sm-6">
-                <div class="lesson text-center">
-                  <br />
-                  <%= link_to lesson.title, lesson_path(lesson) %>
-                  -
-                  <br />
-                  <%= lesson.subtitle %>
-                </div>
+  <div class="col-12">
+    <% @course.sections.each do |section| %>
+      <br /><br />
+      <div class="section">
+        <h3>
+          <%= section.title %>
+        </h3>
+        <div class="row">
+          <% section.lessons.rank(:row_order).each do |lesson| %>
+            <div class="col-12 col-sm-6">
+              <div class="lesson text-center">
+                <br />
+                <%= link_to lesson.title, lesson_path(lesson) %>
+                -
+                <br />
+                <%= lesson.subtitle %>
               </div>
-            <% end %>
-          </div>
-          <br class="clr" />
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
+        <br class="clr" />
+      </div>
+    <% end %>
+  </div>
 </div>
