@@ -33,8 +33,7 @@
           <% end %>
         <% end %>
       <% end %>
-        <h3 class="badge badge-info">Sign In to Enroll!</h3>
-      <% end %>
+      <h3 class="badge badge-info">Sign In to Enroll!</h3>
     </div>
 
     <div class="col-sm-8 col-12">
@@ -44,28 +43,29 @@
 
   <% section.courses.rank(:row_order).each do |course| %>
 
-  <div class="col-12">
-    <% @course.sections.each do |section| %>
-      <br /><br />
-      <div class="section">
-        <h3>
-          <%= section.title %>
-        </h3>
-        <div class="row">
-          <% section.lessons.rank(:row_order).each do |lesson| %>
-            <div class="col-12 col-sm-6">
-              <div class="lesson text-center">
-                <br />
-                <%= link_to lesson.title, lesson_path(lesson) %>
-                -
-                <br />
-                <%= lesson.subtitle %>
+    <div class="col-12">
+      <% @course.sections.each do |section| %>
+        <br /><br />
+        <div class="section">
+          <h3>
+            <%= section.title %>
+          </h3>
+          <div class="row">
+            <% section.lessons.rank(:row_order).each do |lesson| %>
+              <div class="col-12 col-sm-6">
+                <div class="lesson text-center">
+                  <br />
+                  <%= link_to lesson.title, lesson_path(lesson) %>
+                  -
+                  <br />
+                  <%= lesson.subtitle %>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
+          <br class="clr" />
         </div>
-        <br class="clr" />
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
